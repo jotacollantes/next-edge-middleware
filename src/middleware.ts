@@ -11,14 +11,14 @@ export function middleware(request:NextRequest) {
  
   // Specify the correct route based on the requests location
   if (country === BLOCKED_COUNTRY) {
-    console.log("bloqueado")
+    console.log(`Blocked Visitor from ${country}`)
     
     //http://localhost:3000/secret-page
     //request.nextUrl.pathname :/secret-page 
     //request.url URL completa: http://localhost:3000/secret-page
     urlDestination="/login"
   } else {
-    console.log("desbloqueado")
+    //console.log("desbloqueado")
     urlDestination="/secret-page"
   }
   //Redirect cambia la ruta en la barra del navegador
